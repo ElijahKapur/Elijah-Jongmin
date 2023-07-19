@@ -21,9 +21,22 @@ public class Tile {
 	
 	private BufferedImage tileImage;
 	
+	public Tile(int r, int c) {
+		this.col = c;
+		this.row = r;
+		this.worldX = col*tileSize;
+		this.worldY = row*tileSize;
+		this.type = 9;
+		try {
+			LoadImage(type);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	
 	public Tile(int r, int c,int type) {
-		tileColor= Color.CYAN ;
 		this.col = c;
 		this.row = r;
 		worldX = col*tileSize;
@@ -79,5 +92,15 @@ public class Tile {
 		// TODO Auto-generated method stub
 		return type;
 	}
+
+	public int getCol() {
+		// TODO Auto-generated method stub
+		return(col);
+	}
+	public int getRow() {
+		// TODO Auto-generated method stub
+		return(row);
+	}
+
 
 }

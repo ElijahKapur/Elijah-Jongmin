@@ -26,10 +26,6 @@ public class Player {
 	
 	
 	public Player() {
-		screenX = VisonaryRunner.getWindowSizeX()/2;
-		screenY = VisonaryRunner.getWindowSizeY()/2;
-		setLocation();
-		
 		try {
 			dot = ImageIO.read(getClass().getResourceAsStream("/Images/dot.png"));
 			}
@@ -40,6 +36,8 @@ public class Player {
 		
 	}
 	public void setLocation() {
+		screenX = VisonaryRunner.getWindowSizeX()/2;
+		screenY = VisonaryRunner.getWindowSizeY()/2;
 		Tile Spawn = Map.getSpawn();
 		worldY = Spawn.getWorldY();
 		worldX = Spawn.getWorldX();
@@ -59,6 +57,7 @@ public class Player {
 		if(GDV5.KeysPressed[KeyEvent.VK_S]) {
 			worldY+=speed; 
 		}
+		
 		//System.out.println("WorldY"+worldY);
 		//System.out.println("WorldX"+worldX);
 		
